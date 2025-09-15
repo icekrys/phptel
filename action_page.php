@@ -126,8 +126,7 @@ $date = date("Y-m-d"); // This will store today's date (2025-03-27)
 $stmt = mysqli_prepare($con, "INSERT INTO user_table (Name_user, Ip, Bios, Os, Sql_answer, Output_device, Programming_languages, Linkedin_owner, Giving_pledge, Cyber_threats, Ram, Iphone_year, Virus, Garage_companies, It_acronym, Creator, Date_user) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 // Bind parameters to the SQL statement using appropriate data types
-mysqli_stmt_bind_param($stmt, 'sssssssssssissss', $nm, $ip, $bios, $os, $sql_answer, $output_device, $programming_languages, $linkedin_owner, $giving_pledge, $cyber_threats, $ram, $iphone_year, $virus, $garage_companies, $it_acronym, $creator, $date);
-
+mysqli_stmt_bind_param($stmt, 'sssssssssssisssss', $nm, $ip, $bios, $os, $sql_answer, $output_device, $programming_languages, $linkedin_owner, $giving_pledge, $cyber_threats, $ram, $iphone_year, $virus, $garage_companies, $it_acronym, $creator, $date);
 // Execute the SQL statement and check for errors
 if (!mysqli_stmt_execute($stmt)) {
     die("Database error: " . mysqli_stmt_error($stmt));
