@@ -12,7 +12,4 @@ $con = mysqli_connect($host, $username, $password, $database, $port);
 if(!$con){
     die("Connection failed: " . mysqli_connect_error());
 }
-
-// Optional: Debug info (remove in production)
-echo "Connected to host: $host, database: $database, user: $username";
 ?>
