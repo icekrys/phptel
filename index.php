@@ -14,8 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_id'])) {
 }
 
 // Fetch data from the database
-    $sql = "SELECT Id, Name_user, Date_user FROM user_table"; // Adjust table name if needed
-    $result = mysqli_query($con, $sql); // Ensure $conn matches config.php
+$sql = "SELECT Id, Name_user, Date_user FROM user_table";
+$result = mysqli_query($con, $sql);
+
+// Check if query was successful
+if ($result === false) {
+    die("Query failed: " . mysqli_error($con));
+}
 ?>
 <!DOCTYPE html>  
     <html>
